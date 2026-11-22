@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Dashboard | JobNest Demo</title>
+  <meta name="description" content="Demo company dashboard for JobNest with sample data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="company" data-header="solid">
+
+  <div class="dashboard-container">
+    <div class="page-header">
+      <div>
+        <h1><i class="fas fa-chart-line"></i> Company Dashboard</h1>
+        <p class="sub">Signed in (demo) as <strong>Lanka TechWorks (Pvt) Ltd</strong> &mdash; a fictional sample company.</p>
+      </div>
+      <div class="action-buttons">
+        <button type="button" class="btn-action btn-success" data-open-modal="post-job-modal"><i class="fas fa-plus-circle"></i> Post New Job</button>
+        <a href="index.html" class="btn-action btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+
+    <div class="glass-panel payment-status-card reveal">
+      <div class="status-header">
+        <h2><i class="fas fa-check-circle"></i> Membership Active</h2>
+        <span class="status-badge"><i class="fas fa-check-circle"></i> Gold Member</span>
+      </div>
+      <div class="payment-message"><i class="fas fa-check-circle"></i> Your membership is active! You can now post jobs. <em>(Sample status &mdash; no real payment.)</em></div>
+      <div class="payment-details">
+        <div class="detail-item"><div class="detail-label">Plan</div><div class="detail-value">Gold</div></div>
+        <div class="detail-item"><div class="detail-label">Jobs Posted</div><div class="detail-value" id="c-jobs-limit">0 / 20</div></div>
+        <div class="detail-item"><div class="detail-label">Valid Until</div><div class="detail-value" id="plan-valid">—</div></div>
+        <div class="detail-item"><div class="detail-label">Days Remaining</div><div class="detail-value">214</div></div>
+      </div>
+    </div>
+
+    <div class="stats-grid reveal">
+      <div class="glass-panel stat-card"><div class="stat-icon"><i class="fas fa-briefcase"></i></div><div class="stat-number" id="c-jobs">0</div><div class="stat-label">Posted Jobs</div></div>
+      <div class="glass-panel stat-card"><div class="stat-icon"><i class="fas fa-file-alt"></i></div><div class="stat-number" id="c-apps">0</div><div class="stat-label">Total Applications</div></div>
+      <div class="glass-panel stat-card"><div class="stat-icon"><i class="fas fa-check-circle"></i></div><div class="stat-number" id="c-selected">0</div><div class="stat-label">Selected Candidates</div></div>
+      <div class="glass-panel stat-card"><div class="stat-icon"><i class="fas fa-hourglass-half"></i></div><div class="stat-number" id="c-pending">0</div><div class="stat-label">Pending / Shortlisted</div></div>
+    </div>
+
+    <div class="glass-panel panel-widget reveal" id="applications" style="margin-bottom:25px">
+      <h3><span><i class="fas fa-users"></i> Recent Applications</span><small style="font-size:13px;color:var(--text-tertiary);font-weight:500">Change a status to try it (demo)</small></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Applicant Name</th><th>Applied Job</th><th>Matching Score</th><th>Skill Match</th><th>Status</th><th>Update</th></tr></thead>
+          <tbody id="apps-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="glass-panel panel-widget reveal" id="my-jobs" style="margin-bottom:25px">
+      <h3><span><i class="fas fa-briefcase"></i> My Job Posts</span>
+        <button type="button" class="btn-action btn-success btn-sm" data-open-modal="post-job-modal"><i class="fas fa-plus"></i> New</button></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Job Title</th><th>Type</th><th>Location</th><th>Closing Date</th><th>Status</th></tr></thead>
+          <tbody id="jobs-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="dashboard-grid reveal">
+      <div class="glass-panel panel-widget">
+        <h3><span><i class="fas fa-bolt"></i> Quick Actions</span></h3>
+        <div class="quick-links">
+          <button type="button" class="quick-link" data-open-modal="post-job-modal"><i class="fas fa-plus"></i> Post New Job</button>
+          <a href="#applications" class="quick-link"><i class="fas fa-users"></i> Manage Applications</a>
+          <a href="#my-jobs" class="quick-link"><i class="fas fa-briefcase"></i> View My Job Posts</a>
+          <button type="button" class="quick-link" data-demo-click="Demo only: messaging is not available in this static version."><i class="fas fa-envelope"></i> Messages</button>
+        </div>
+      </div>
+
+      <div class="glass-panel panel-widget">
+        <h3><span><i class="fas fa-info-circle"></i> Your Plan</span></h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> <strong>Gold Plan</strong></li>
+          <li><i class="fas fa-briefcase"></i> Up to 20 Job Posts</li>
+          <li><i class="fas fa-wand-magic-sparkles"></i> Smart CV matching</li>
+          <li><i class="fas fa-headset"></i> Priority Support</li>
+        </ul>
+        <div style="margin-top:20px;text-align:center">
+          <button type="button" class="btn-action btn-secondary" data-demo-click="Demo only: plan upgrades and payments are not processed.">Upgrade / Renew Plan</button>
+        </div>
+      </div>
+
+      <div class="glass-panel panel-widget">
+        <h3><span><i class="fas fa-life-ring"></i> Support</span></h3>
+        <ul class="feature-list">
+          <li><i class="fas fa-envelope"></i> Email: support@jobportal.com</li>
+          <li><i class="fas fa-phone"></i> Phone: <strong>+94 11 234 5678</strong></li>
+          <li><i class="fas fa-comments"></i> WhatsApp: <strong>+94 77 123 4567</strong></li>
+          <li><i class="fas fa-clock"></i> Mon – Fri, 9.00 am – 5.00 pm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post job modal (demo only) -->
+  <div class="modal" id="post-job-modal" role="dialog" aria-modal="true" aria-labelledby="post-job-title">
+    <div class="modal-box">
+      <button class="modal-close" type="button" aria-label="Close">✕</button>
+      <h2 id="post-job-title">Post a New Job</h2>
+      <p>The job is added to this page only. Nothing is published or saved.</p>
+      <form id="post-job-form">
+        <div class="form-row"><label for="pj-title">Job title</label><input id="pj-title" name="title" type="text" placeholder="e.g. QA Engineer" required></div>
+        <div class="form-grid">
+          <div class="form-row"><label for="post-job-cat">Category</label><select id="post-job-cat" name="category"><option value="">Select</option></select></div>
+          <div class="form-row"><label for="post-job-type">Job type</label><select id="post-job-type" name="type"><option value="">Select</option></select></div>
+          <div class="form-row"><label for="pj-loc">Location</label><input id="pj-loc" name="location" type="text" placeholder="e.g. Colombo"></div>
+          <div class="form-row"><label for="pj-sal">Salary (Rs)</label><input id="pj-sal" name="salary" type="text" placeholder="e.g. 120,000 - 160,000"></div>
+        </div>
+        <div class="form-row"><label for="pj-desc">Description</label><textarea id="pj-desc" name="description" rows="3" placeholder="Short description of the role"></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%"><i class="fas fa-plus-circle"></i> Add Job (Demo)</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

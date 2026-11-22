@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobNest – Find Your Dream Job | Demo</title>
+  <meta name="description" content="Static demo of the JobNest job portal: browse sample jobs, companies and dashboards.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+
+  <noscript><p style="padding:140px 20px 20px;text-align:center">This demo needs JavaScript enabled to show navigation and sample jobs.</p></noscript>
+
+  <section class="cinematic-hero">
+    <div id="cinematic-slider" class="hero-slider" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+      <div class="glass-panel">
+        <h1>Find Your <span>Dream Job</span> Today</h1>
+        <p class="lead">Discover thousands of opportunities in top tier companies.</p>
+
+        <form action="jobs.html" method="GET" class="premium-search-bar" role="search">
+          <div class="search-input-group flex-fill">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" aria-label="Keyword" placeholder="I'm looking for... (Eg: Job title, Position, Company)">
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-input-group">
+            <i class="fas fa-layer-group"></i>
+            <select name="category" id="home-category" aria-label="Job category">
+              <option value="">Job Category</option>
+            </select>
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-input-group">
+            <i class="fas fa-map-marker-alt"></i>
+            <select name="location" id="home-location" aria-label="Location">
+              <option value="">Location</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary search-btn"><i class="fas fa-search"></i> SEARCH</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section reveal" aria-label="Platform statistics (sample numbers)">
+    <div class="stat-box">
+      <div class="stat-number stat-counter" id="stat-jobs" data-target="0">0</div>
+      <div class="stat-label">Active Jobs</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number stat-counter" id="stat-companies" data-target="0">0</div>
+      <div class="stat-label">Top Companies</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number stat-counter" id="stat-candidates" data-target="0">0</div>
+      <div class="stat-label">Candidates</div>
+    </div>
+  </section>
+
+  <section class="categories" aria-label="Browse by category">
+    <div class="cat-slider">
+      <button type="button" class="cat-nav" id="cat-prev" aria-label="Previous categories">←</button>
+      <div class="cat-grid" id="cat-grid"></div>
+      <button type="button" class="cat-nav" id="cat-next" aria-label="Next categories">→</button>
+    </div>
+  </section>
+
+  <section id="jobs" class="jobs">
+    <div class="section-head">
+      <h2 class="section-title">Featured Jobs</h2>
+      <a href="jobs.html" class="details-btn">View all jobs <i class="fas fa-arrow-right" style="margin-left:8px;margin-top:3px"></i></a>
+    </div>
+    <div class="job-list" id="featured-list"></div>
+    <div class="see-more">
+      <a href="jobs.html" class="btn-primary">See More Jobs</a>
+    </div>
+  </section>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

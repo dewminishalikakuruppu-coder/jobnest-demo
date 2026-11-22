@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | JobNest Demo</title>
+  <meta name="description" content="Demo registration page for JobNest. No account is created.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="register" data-header="solid">
+
+  <div class="auth-wrap">
+    <div class="auth-left">
+      <div class="auth-logo"><i class="fa fa-briefcase"></i> <span>JobNest</span></div>
+      <h1>Create Your Account</h1>
+      <p data-role-text='{"seeker":"Join JobNest to discover jobs that match your skills and apply in just a few clicks.","company":"Register your company to post vacancies, screen CVs with smart matching and hire faster."}'>
+        Join JobNest to discover jobs that match your skills and apply in just a few clicks.
+      </p>
+      <div class="feature" data-role-only="seeker"><i class="fa fa-search"></i><div><b>Smart Job Search</b><br>Filter by category and location</div></div>
+      <div class="feature" data-role-only="seeker"><i class="fa fa-file-lines"></i><div><b>One-Click Apply</b><br>Apply with your CV</div></div>
+      <div class="feature" data-role-only="seeker"><i class="fa fa-bell"></i><div><b>Track Applications</b><br>Get status updates</div></div>
+      <div class="feature" data-role-only="company"><i class="fa fa-briefcase"></i><div><b>Post Jobs</b><br>Premium, Gold &amp; Platinum plans</div></div>
+      <div class="feature" data-role-only="company"><i class="fa fa-wand-magic-sparkles"></i><div><b>Smart Matching</b><br>Rank applicants automatically</div></div>
+      <div class="feature" data-role-only="company"><i class="fa fa-chart-line"></i><div><b>Hiring Dashboard</b><br>All applications in one place</div></div>
+    </div>
+
+    <div class="auth-right">
+      <div class="form-box">
+        <div class="top-icon"><i class="fa fa-user-plus"></i></div>
+        <h2 data-role-text='{"seeker":"User Sign Up","company":"Company Sign Up"}'>Sign Up</h2>
+        <p>Create your free account</p>
+
+        <div class="role-tabs" role="tablist" aria-label="Account type">
+          <button type="button" role="tab" data-role="seeker">Job Seeker</button>
+          <button type="button" role="tab" data-role="company">Company</button>
+        </div>
+
+        <div class="demo-note"><i class="fas fa-flask"></i><span><strong>Demo form.</strong> Nothing you type is sent or saved, and no account is created.</span></div>
+
+        <form id="auth-form" novalidate>
+          <div class="input-group" data-role-only="seeker">
+            <i class="fa fa-user"></i>
+            <input type="text" name="name" placeholder="Full Name" aria-label="Full name" autocomplete="off">
+          </div>
+          <div class="input-group" data-role-only="company">
+            <i class="fa fa-building"></i>
+            <input type="text" name="company" placeholder="Company Name" aria-label="Company name" autocomplete="off">
+          </div>
+          <div class="input-group" data-role-only="company">
+            <i class="fa fa-industry"></i>
+            <select name="industry" aria-label="Industry">
+              <option value="">Select Industry</option>
+              <option>Information Technology</option>
+              <option>Finance &amp; Banking</option>
+              <option>Healthcare</option>
+              <option>Hospitality &amp; Tourism</option>
+              <option>Manufacturing</option>
+              <option>Education</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email Address" aria-label="Email address" autocomplete="off">
+          </div>
+          <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" placeholder="Password (demo &mdash; not stored)" aria-label="Password" autocomplete="off">
+            <button type="button" class="toggle-pass" aria-label="Show password"><i class="fas fa-eye"></i></button>
+          </div>
+          <div class="options">
+            <label><input type="checkbox"> I agree to the Terms &amp; Privacy Policy</label>
+          </div>
+          <button type="submit" class="auth-submit">Create Account</button>
+          <p class="switch-link">Already have an account? <a href="login.html">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

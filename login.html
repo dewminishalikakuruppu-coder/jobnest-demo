@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | JobNest Demo</title>
+  <meta name="description" content="Demo login page for JobNest. No real authentication.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="login" data-header="solid">
+
+  <div class="auth-wrap">
+    <div class="auth-left">
+      <div class="auth-logo"><i class="fa fa-briefcase"></i> <span>JobNest</span></div>
+      <h1>Welcome Back!</h1>
+      <p data-role-text='{"seeker":"Login to your job seeker account to search jobs, apply with your CV and track your applications.","company":"Login to your company account and manage jobs, applications and recruitment easily.","admin":"Login to the admin panel to manage users, companies, jobs and payments."}'>
+        Login to your company account and manage jobs, applications and recruitment easily.
+      </p>
+      <div class="feature"><i class="fa fa-briefcase"></i><div><b>Manage Job Posts</b><br>Create and update vacancies</div></div>
+      <div class="feature"><i class="fa fa-users"></i><div><b>View Applicants</b><br>Track candidate applications</div></div>
+      <div class="feature"><i class="fa fa-chart-line"></i><div><b>Grow Your Business</b><br>Hire talented employees</div></div>
+    </div>
+
+    <div class="auth-right">
+      <div class="form-box">
+        <div class="top-icon"><i class="fa fa-building"></i></div>
+        <h2 data-role-text='{"seeker":"Job Seeker Login","company":"Login Company","admin":"Admin Login"}'>Login</h2>
+        <p>Login to continue</p>
+
+        <div class="role-tabs" role="tablist" aria-label="Account type">
+          <button type="button" role="tab" data-role="seeker">Job Seeker</button>
+          <button type="button" role="tab" data-role="company">Company</button>
+          <button type="button" role="tab" data-role="admin">Admin</button>
+        </div>
+
+        <div class="demo-note"><i class="fas fa-flask"></i><span><strong>Demo only.</strong> No password is checked, sent or stored. Please don't enter a real password &mdash; just press Login.</span></div>
+
+        <button class="google-btn" type="button" data-role-only="seeker company" data-demo-click="Demo only: Google sign-in is not connected in this static version.">
+          <i class="fab fa-google" style="color:#4285f4"></i> Continue with Google
+        </button>
+        <div class="divider" data-role-only="seeker company">or continue with email</div>
+
+        <form id="auth-form" novalidate>
+          <div class="input-group">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" value="demo@jobnest.demo" aria-label="Email address" autocomplete="off">
+          </div>
+          <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" value="demo1234" aria-label="Password" autocomplete="off">
+            <button type="button" class="toggle-pass" aria-label="Show password"><i class="fas fa-eye"></i></button>
+          </div>
+          <div class="options">
+            <label><input type="checkbox"> Remember Me</label>
+            <a href="#" data-demo-click="Demo only: password reset emails are not sent in this static version.">Forgot Password?</a>
+          </div>
+          <button type="submit" class="auth-submit">Login</button>
+          <p class="switch-link" data-role-only="seeker company">Don't have an account? <a href="register.html">Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
